@@ -1,0 +1,27 @@
+<ng-container *ngIf="isVisibleCity">
+  <div class="container">
+    <h1>Choose a city</h1>
+    <form>
+      <div class="form-group">
+        <select name="citiesName" required>
+          <option value="" disabled selected>Wybierz miasto</option>
+          <option *ngFor="let place of places" value="{{place.city}}" (click)="setPlaceParameters(place)">
+            {{place.city}}
+          </option>
+        </select>
+        <br/>
+        <button type="button" (click)="confirmCity()" class="buttonConfirm">Confirm</button>
+      </div>
+    </form>
+  </div>
+</ng-container>
+<ng-container *ngIf="isVisibleAttraction" >
+<div class="container">
+  <h1>Attractions in {{tmpPlaceName}}</h1>
+  <ul *ngFor="let attraction of attractions">
+    <li>{{attraction.name}} - {{attraction.shortDescription}}</li>
+  </ul>
+  <button type="button" (click)="back()" class="buttonConfirm">Back</button>
+</div>
+</ng-container>
+

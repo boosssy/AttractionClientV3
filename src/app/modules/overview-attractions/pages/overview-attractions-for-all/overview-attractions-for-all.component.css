@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+.container
+{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3%;
+}
+
+select {
+  padding: 14px 10px;
+  width: 20vw;
+  outline: none;
+  text-align: center;
+  border-radius: 24px;
+  transition: 0.25s;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 56px;
+}
+
+.buttonbuy, .buttonConfirm {
+  width: 200px;
+  height: 42px;
+  border-radius: 18px;
+  background-color: #187cc2;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+
+}
+.buttonbuy:hover {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+  transition: all .1s ease-in-out;
+ }
+
+

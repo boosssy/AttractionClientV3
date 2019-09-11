@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Bradley";
+  src: url("../../../assets/fonts/BRADHITC.ttf")  format('truetype');
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  clear: both;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 1.9vw;
+  font-family: Bradley;
+}

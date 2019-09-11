@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo:700');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+.offer-bg
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../../../../../assets/img/offer-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*filter: blur(3px);*/
+  /*filter: grayscale(100%);*/
+  z-index: -10;
+}
+
+header
+{
+  text-align: center;
+  width: 100%;
+  height: auto;
+  float: left;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+header h1 ,label{
+  font-family: 'Dancing Script', cursive;
+  margin-top: 50px;
+}
+
+.cards
+{
+  position: relative;
+  float: left;
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+}
+.title{
+  width:100%;
+  text-align: center;
+}
+.title h1 {
+  font-size:50px;
+  font-family: 'Exo', sans-serif;
+}
+.card {
+  text-align:center;
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 450px;
+  background: linear-gradient(#eb9532, #1f3a93);
+  transition:.6s;
+  margin-right: 80px;
+  box-shadow: 0px 20px 60px rgba(0,0,0, 0.5);
+  border-radius: 10px;
+}
+.card:hover{
+  transition:.6s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+.card img{
+  width: 100%;
+  height: 40%;
+  border-radius: 10px;
+}
+
+h3{
+  font-size:25px;
+  font-family: 'Abel', sans-serif;
+  color:rgb(255,255,255);
+  text-shadow: 0 0 2px rgb(255,255,255);
+  transform: translatey(10px);
+}
+
+p{
+
+  font-family: 'Abel', sans-serif;
+  color: white;
+  text-align:center;
+  width:220px;
+  transform: translatex(12px);
+}
+
+.btnselect {
+  width: 200px;
+  height: 42px;
+  border-radius: 18px;
+  background-color: #187cc2;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  margin-top: 25px;
+}
+.btnselect:hover {
+  background-color: transparent;
+  border-color: white;
+  transition: all .1s ease-in-out;
+}
+
+
+
+.container
+{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3%;
+}
+
+.button
+{
+  text-align: right;
+}
+
+select, input{
+  padding: 14px 10px;
+  width: 20vw;
+  outline: none;
+  text-align: center;
+  border-radius: 24px;
+  transition: 0.25s;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 56px;
+}
+
+.buttonbuy, .buttonConfirm, .buttonBack {
+  width: 200px;
+  height: 42px;
+  border-radius: 18px;
+  background-color: #187cc2;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+
+}
+.buttonbuy:hover {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+  transition: all .1s ease-in-out;
+}
+
+
+
+

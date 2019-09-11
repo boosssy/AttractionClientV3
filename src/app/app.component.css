@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+.start
+{
+  height: 100%;
+  /*background-image: url("../assets/img/experience.jpg");*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 0 auto;
+}
+
+.overview-attractions {
+  position: relative;
+  background-image: url("../assets/img/offer-bg.jpg");
+  /*background-attachment: fixed;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.offer {
+  position: relative;
+  /*background-color: rgb(25, 25, 25);*/
+  color: white;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.contact
+{
+  position: relative;
+  color: black;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.about-us {
+  position: relative;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.login
+{
+  position: relative;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.menu {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  font-weight: bold;
+  float:left;
+  text-align: right;
+  border-bottom: 1px white solid;
+}
+
+.menu ul{
+  margin:0 0 0 0;
+  width: 100%;
+}
+
+.menu ul li{
+  margin:0 0 0 0;
+}
+
+.menu ul li a{
+  text-decoration:none;
+  text-align:center;
+  font-family: 'open_sansregular';
+  font-size:20px;
+  color: white;
+  font-weight:bold;
+  margin:0 0 0 0;
+  padding:10px 25px 10px 25px;
+  text-transform:uppercase;
+  transition:0.5s; -webkit-transition:0.5s;
+}
+
+.menu ul li:last-of-type{
+  float:right;
+  margin:0 0 0 40px;
+}
+
+.menu ul li:last-of-type a{
+  color:#fff;
+}
+
+.menu ul li a:hover{
+  background:#187cc2;
+  color:#fff;
+  font-size: 24px;
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  height: auto;
+  clear: both;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 1.8vw;
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(25, 25, 25);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+footer h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+}

@@ -1,0 +1,33 @@
+h1 {
+  font-size: 100px;
+}
+
+.content {
+  text-align: center;
+  padding: 10px;
+}
+
+p {
+  font-size: 20px;
+}
+
+button:hover, button:active {
+  background-color: rgb(239, 179, 1);
+  color: black;
+}
+
+button {
+  width: auto;
+  padding: 8px;
+  background-color: #303032;
+  color: white;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  margin-bottom: 8%;
+  margin-right: 5%;
+  border-radius: 8px;
+  cursor: pointer;
+}

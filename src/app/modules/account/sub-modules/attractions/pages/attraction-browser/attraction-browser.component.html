@@ -1,0 +1,39 @@
+<ng-container *ngIf="isVisibleCity">
+  <div class="container">
+    <h1>Choose a city</h1>
+    <div class="form-group">
+      <form (ngSubmit)="confirmCity()">
+        <select name="citiesName" required>
+          <option value="" disabled selected>Choose a city</option>
+          <option *ngFor="let place of places" value="{{place.city}}" (click)="setPlaceParameters(place)">
+            {{place.city}}
+          </option>
+        </select>
+        <br/>
+        <button type="submit" class="buttonConfirm">Confirm</button>
+      </form>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isVisibleAttraction">
+  <div class="container">
+    <form>
+      <h1>Ile pieniedzy chcesz przeznaczyc na atrakcje</h1>
+      <input type="text" [(ngModel)]="tmpCapacity"
+             class="input-capacity"
+             pattern="[0-9]{4}"
+             title="For numbers"
+             id="capacity" name="capacity"
+             placeholder="Enter amount your cash"
+             required>
+    </form>
+    <button (click)="back()" name="back" class="buttonBack">Back</button>
+    <button (click)="confirmCapacity()" class="buttonConfirm">Confirm</button>
+  </div>
+
+  {{tmpPlaceName}}
+  <div *ngFor="let attraction of attractions">
+    {{attraction.name}}<br>
+  </div>
+</ng-container>
