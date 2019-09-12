@@ -1,0 +1,47 @@
+
+<h1>Twoje Transakcje</h1>
+  <table>
+    <tr>
+      <td><strong>ID</strong></td>
+      <td><strong>Name of Attraction</strong></td>
+      <td>Price</td>
+      <td>Attractiveness</td>
+      <td>Description</td>
+    </tr>
+    <ng-container *ngFor="let attraction of attractions">
+      <tr>
+        <td>{{attraction.id}}</td>
+        <td>{{attraction.name}}</td>
+        <td>{{attraction.price}}</td>
+        <td>{{attraction.attractiveness}}</td>
+        <td>{{attraction.shortDescription}}</td>
+      </tr>
+    </ng-container>
+  </table>
+
+
+
+
+<!--<table>-->
+<!--<tr>-->
+<!--  <td>ID</td>-->
+<!--  <td>Name of User</td>-->
+<!--  <td>Name of Attraction</td>-->
+<!--  <td>Price</td>-->
+<!--  <td>Number of People</td>-->
+<!--  <td>Final Price</td>-->
+<!--  <td>Date</td>-->
+<!--</tr>-->
+<!-- <ng-container *ngFor="let transaction of transactions">&ndash;&gt;-->
+<!--      <tr>-->
+<!--        <td>{{transaction.id}}</td>-->
+<!--        <td>{{transaction.userName}}</td>-->
+<!--        <td>{{transaction.attractionName}}</td>-->
+<!--        <td>{{transaction.price}}</td>-->
+<!--        <td>{{transaction.numberOfPeople}}</td>-->
+<!--        <td>{{transaction.finalPrice}}</td>-->
+<!--        <td>{{transaction.date}}</td>-->
+<!--      </tr>-->
+<!--    </ng-container>-->
+<!--  </table>-->
+

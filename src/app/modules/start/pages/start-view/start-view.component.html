@@ -1,5 +1,19 @@
-<p>
-  start-view works!
-  User zalogowany:  {{status}}
-  User zalogowany:
-</p>
+
+<div class="offer-bg"></div>
+<header>
+  <h1>Oferty przygotowane specjalnie dla Ciebie!</h1>
+</header>
+
+<div id="cards" >
+  <ng-container *ngFor="let attraction of attractions ;">
+    <!-- todo popraw-->
+    <div class="card" *ngIf="attraction.attractiveness>7.9" >
+      <img src="../../assets/img/{{attraction.name}}.jpg" alt="">
+      <h3>{{attraction.name}}</h3>
+      <p>{{attraction.shortDescription}}</p>
+      <button class="btnselect">MORE ...</button>
+    </div>
+
+  </ng-container>
+</div>
+<br><br>

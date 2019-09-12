@@ -1,17 +1,20 @@
 <div class="account-view-content">
   <div class="menu">
-    <ul>
-      <li>
-        <a routerLink="/account/about-you">About you</a>
+    <ul class="icon-menu">
+      <li class="icon-box about">
+        <a routerLink="/account/about-you"><h2>About you</h2></a>
       </li>
-      <li>
-        <a routerLink="/account/attraction-browser">Attractions</a>
+      <li class="icon-box attractions">
+        <a routerLink="/account/attraction-browser"><h2>Attractions</h2></a>
       </li>
-      <li>
-        <a routerLink="/account/attraction-browser">Your transactions</a>
+      <li class="icon-box transactions">
+        <a routerLink="/account/transaction"><h2>Transactions</h2></a>
       </li>
     </ul>
   </div>
-  <h1>Hi guest</h1>
+  <div class="content">
+    <!--<h1>Hi guest</h1>-->
+  </div>
+
   <router-outlet></router-outlet>
 </div>

@@ -38,7 +38,7 @@
     <div *ngFor="let attraction of attractions">
       <div class="cards">
         <div class="card">
-          <img src="../../../../../../assets/img/eiffla.jpg" alt="">
+          <img src="../../../../../../../assets/img/{{attraction.name}}.jpg" alt="">
           <h3>{{attraction.name}}</h3>
           <h3>{{attraction.price}} €</h3>
           <h3>Rate: {{attraction.attractiveness}}</h3>
@@ -54,7 +54,5 @@
 </ng-container>
 
 <ng-container *ngIf="isVisibleNotFoundMsg">
-  <div class="container">
-    <p>Not found!</p>
-  </div>
+
 </ng-container>
