@@ -30,6 +30,11 @@ header
   color: white;
 }
 
+h2 {
+  font-family: 'Dancing Script', cursive;
+  margin-top: 50px;
+}
+
 header h1 ,label{
   font-family: 'Dancing Script', cursive;
   margin-top: 50px;
@@ -74,15 +79,14 @@ header h1 ,label{
 }
 
 h3{
-  font-size:25px;
+  font-size: 20px;
   font-family: 'Abel', sans-serif;
   color:rgb(255,255,255);
   text-shadow: 0 0 2px rgb(255,255,255);
   transform: translatey(10px);
 }
 
-p{
-
+p {
   font-family: 'Abel', sans-serif;
   color: white;
   text-align:center;
@@ -91,18 +95,19 @@ p{
 }
 
 .btnselect {
-  width: 200px;
-  height: 42px;
+  width: 120px;
+  height: 38px;
   border-radius: 18px;
   background-color: #187cc2;
   border: solid 1px transparent;
   color: #fff;
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 200;
   cursor: pointer;
   transition: all .1s ease-in-out;
-  margin-top: 25px;
+  margin: 13px;
 }
+
 .btnselect:hover {
   background-color: transparent;
   border-color: white;
@@ -140,6 +145,21 @@ h1 {
   font-size: 56px;
 }
 
+.header {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 70px;
+  text-align: center;
+}
+
+.header-down {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+
 .buttonbuy, .buttonConfirm, .buttonBack {
   width: 200px;
   height: 42px;
@@ -151,9 +171,13 @@ h1 {
   font-weight: 300;
   cursor: pointer;
   transition: all .1s ease-in-out;
+  margin: 2%;
 
 }
-.buttonbuy:hover {
+
+
+
+.buttonbuy:hover, .container button[type = "submit"]:disabled {
   background-color: transparent;
   border-color: black;
   color: black;
@@ -161,5 +185,7 @@ h1 {
 }
 
 
+.buttons-in-card {
 
+}
 

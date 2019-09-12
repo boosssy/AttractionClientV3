@@ -17,6 +17,7 @@ import {FormComponent} from './modules/form/form.component';
 import {AccountComponent} from './modules/account/account.component';
 import {AttractionBrowserComponent} from './modules/account/sub-modules/attractions/pages/attraction-browser/attraction-browser.component';
 import {AboutUserComponent} from './modules/account/sub-modules/account-information/pages/about-user/about-user.component';
+import {FailedLoginComponent} from './modules/exceptions/pages/failed-login/failed-login.component';
 
 
 const parentModuleRoutes: Routes = [
@@ -75,6 +76,10 @@ const parentModuleRoutes: Routes = [
       {
         path: 'successful-login',
         component: SuccessfulLoginComponent
+      },
+      {
+        path: 'failed-login',
+        component: FailedLoginComponent
       },
       {
         path: 'failed',

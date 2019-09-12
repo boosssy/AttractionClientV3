@@ -1,3 +1,5 @@
+<div class="header">Welcome in our browser!</div>
+<div class="header-down">You can looking for attractions giving place and amount money</div>
 <ng-container *ngIf="isVisibleCity">
   <div class="container">
     <h1>Choose a city</h1>
@@ -10,7 +12,7 @@
           </option>
         </select>
         <br/>
-        <button type="submit" class="buttonConfirm">Confirm</button>
+        <button type="submit" class="buttonConfirm" [disabled]="!validConfirmCity()">Confirm</button>
       </form>
     </div>
   </div>
@@ -19,7 +21,7 @@
 <ng-container *ngIf="isVisibleAttraction">
   <div class="container">
     <form>
-      <h1>Ile pieniedzy chcesz przeznaczyc na atrakcje</h1>
+      <h1>How much money want you spend to attractions</h1>
       <input type="text" [(ngModel)]="tmpCapacity"
              class="input-capacity"
              pattern="[0-9]{4}"
@@ -29,11 +31,30 @@
              required>
     </form>
     <button (click)="back()" name="back" class="buttonBack">Back</button>
-    <button (click)="confirmCapacity()" class="buttonConfirm">Confirm</button>
+    <button (click)="confirmCapacity()" class="buttonConfirm" [disabled]="!validConfirmCapacity()">Confirm</button>
   </div>
 
-  {{tmpPlaceName}}
-  <div *ngFor="let attraction of attractions">
-    {{attraction.name}}<br>
+  <div class="container">
+    <div *ngFor="let attraction of attractions">
+      <div class="cards">
+        <div class="card">
+          <img src="../../../../../../assets/img/eiffla.jpg" alt="">
+          <h3>{{attraction.name}}</h3>
+          <h3>{{attraction.price}} €</h3>
+          <h3>Rate: {{attraction.attractiveness}}</h3>
+          <br>
+          <div class="buttons-in-card">
+            <button class="btnselect">More...</button>
+            <button class="btnselect">Add to buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isVisibleNotFoundMsg">
+  <div class="container">
+    <p>Not found!</p>
   </div>
 </ng-container>

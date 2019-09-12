@@ -20,7 +20,10 @@ export class LoginFormComponent implements OnInit {
   showButtonLogoutFb = true;
   hiddenButtonLoginFb = true;
   hiddenButtonLogoutFb = false;
+
+  // login
   status = false;
+  // session: Session = Session.Instance;
 
   @Output()
   eventStat = new EventEmitter<boolean>();
@@ -47,20 +50,21 @@ export class LoginFormComponent implements OnInit {
     );
   }
 
-  login(status: boolean) {
+  login() {
     let i: number;
     for (i = 0; i < this.users.length; i++)  {
       if ( this.tmpUser.userName === this.users[i].userName ) {
         if (this.tmpUser.password === this.users[i].password) {
-          this.status = status;
+          this.status = true;
         }
       }
     }
     if (this.status) {
       location.assign('/account');
-      // console.log('status login=' +this.status);
+      this.mainService.setStatusUser(true);
+      // this.session.setStatus(true);
     } else {
-      location.assign('/failed');
+      location.assign('/failed-login');
       // console.log('status off=' +this.status);
     }
   }
@@ -74,20 +78,18 @@ export class LoginFormComponent implements OnInit {
     this.status = status;
     this.socioAuthServ.signOut();
     this.user = null;
+    this.mainService.setStatusUser(false);
+    // this.session.setStatus(false);
     console.log('User signed out.');
   }
 
   signup() {
-    location.assign('/registration');
+    location.assign('/form/registration');
   }
 
-  send(stat) {
-    this.eventStat.emit(this.status);
-  }
   ngOnInit() {
     this.mainService.findAllUsers().subscribe( data => {
       this.users = data;
     });
   }
-
 }

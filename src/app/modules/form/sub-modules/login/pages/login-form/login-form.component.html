@@ -2,12 +2,12 @@
   <h1>Login</h1>
 </header>
 
-<form method="post" name="form1" (ngSubmit)="login(true)" #formData="ngForm" *ngIf="status===false">
+<form method="post" name="form1" #formData="ngForm" *ngIf="status===false">
   <input [(ngModel)]="tmpUser.userName" type="email" placeholder="e-mail" name="email" required/>
   <input [(ngModel)]="tmpUser.password" type="password" placeholder="hasło" name ="password" required/>
 
-  <button class="btn" type="submit" [disabled]="formData.invalid" (click)="send(status)">Log in</button>
-  <button class="btn" type="submit" (click)="signup()">Registration</button>
+  <button class="btn" [disabled]="formData.invalid" (click)="login()">Log in</button>
+  <button class="btn" (click)="signup()">Registration</button>
 
 
   <button *ngIf="hiddenButtonLoginFb" [disabled]="showButtonLoginFb" class="btn btn-primary btn-block"   (click)="signIn('Facebook');">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainSevice} from '../../../../core/sevice/MainSevice';
 
 @Component({
   selector: 'app-start-view',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-view.component.css']
 })
 export class StartViewComponent implements OnInit {
+  private status: true;
+  // session: Session;
 
-  constructor() { }
+  constructor(private mainService: MainSevice) { }
 
   ngOnInit() {
+    // this.session = Session.getInstance();
   }
 
 }

@@ -10,19 +10,10 @@ import {Place} from './core/model/Place';
 })
 
 export class AppComponent implements OnInit {
-  title = 'Kraina atrakcji';
-  attractions: Attraction[];
-  places: Place[];
-
+  // session = Session.Instance;
   constructor(private mainService: MainSevice) {
   }
 
   ngOnInit(): void {
-    this.mainService.findAllAttractions().subscribe( data => {
-      this.attractions = data;
-    });
-    this.mainService.findAllPlaces().subscribe( data => {
-      this.places = data;
-    });
   }
 }

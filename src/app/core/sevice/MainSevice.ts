@@ -15,12 +15,21 @@ export class MainSevice {
   private placesUrl: string;
   private transactionsUrl: string;
   private usersUrl: string;
+  private statusUser = false;
 
   constructor(private http: HttpClient) {
     this.attractionsUrl = 'http://localhost:8080/attractions';
     this.placesUrl = 'http://localhost:8080/places';
     this.transactionsUrl = 'http://localhost:8080/transactions';
     this.usersUrl = 'http://localhost:8080/users';
+  }
+
+  public setStatusUser(status: boolean) {
+    this.statusUser = status;
+  }
+
+  public getStatusUser(): boolean {
+    return this.statusUser;
   }
 
   public findAllAttractions(): Observable<Attraction[]> {
