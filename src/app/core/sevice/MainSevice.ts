@@ -42,6 +42,10 @@ export class MainSevice {
   public findAttractionByName(attraction: Attraction): Observable<Attraction> {
     return this.http.get<Attraction>(this.attractionsUrl + '/byName/' + attraction.name);
   }
+  //todo dodane do pobierania 3 najlepszych ofert na glownej stronie
+  public findAttractionByAttractiveness(attraction: Attraction): Observable<Attraction> {
+    return this.http.get<Attraction>(this.attractionsUrl + '/byAttractiveness/' + attraction.attractiveness);
+  }
 
   public findAllTransaction(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.transactionsUrl);

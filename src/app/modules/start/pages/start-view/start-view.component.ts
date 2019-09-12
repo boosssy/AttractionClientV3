@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Attraction} from "../../../../core/model/Attraction";
+import {MainSevice} from "../../../../core/sevice/MainSevice";
 
 @Component({
   selector: 'app-start-view',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartViewComponent implements OnInit {
 
-  constructor() { }
+  attractions: Attraction[];
+  attraction: Attraction;
+
+  constructor(private  mainService: MainSevice) { }
 
   ngOnInit() {
+    this.mainService.findAllAttractions().subscribe(data => {
+      this.attractions = data;
+    });
+
+    this.mainService.findAttractionByAttractiveness(this.attraction).subscribe(data => {
+      this.attraction = data;
+    });
+
   }
 
 }
