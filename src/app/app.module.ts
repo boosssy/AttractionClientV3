@@ -19,6 +19,8 @@ import { MenuAccountComponent } from './layouts/menu-account/menu-account.compon
 import {StartModule} from './modules/start/start.module';
 import {AboutUsModule} from './modules/about-us/about-us.module';
 import {AccountModule} from './modules/account/account.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
 
 const facebookoauthclientid = '797209834027503';
