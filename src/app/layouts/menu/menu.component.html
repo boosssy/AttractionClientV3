@@ -1,21 +1,27 @@
 <div class="menu">
   <ul>
     <li>
-      <a routerLink="/start">Start</a>
+      <a href="/start">Start</a>
     </li>
     <li>
-      <a routerLink="/attractions-for-all">Attractions</a>
+      <a href="/attractions-for-all">Attractions</a>
     </li>
     <li>
-      <a routerLink="/about-us">About Us</a>
+      <a href="/about-us">About Us</a>
     </li>
     <li>
-      <a routerLink="/contact">Contact</a>
+      <a href="/contact">Contact</a>
     </li>
-    <li class="right-buttons" >
+    <li *ngIf="sessionUser.status" class="right-buttons">
+      <a (click)="backToStart()">Log out</a>
+    </li>
+    <li *ngIf="sessionUser.status" class="right-buttons">
+      <a routerLink="/account/about-you">My account</a>
+    </li>
+    <li *ngIf="!sessionUser.status" class="right-buttons" >
       <a routerLink="/form/login" >Sign in</a>
     </li>
-    <li class="right-buttons">
+    <li *ngIf="!sessionUser.status" class="right-buttons">
       <a routerLink="/form/registration">Sign up</a>
     </li>
   </ul>

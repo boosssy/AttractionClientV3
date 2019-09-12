@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MainSevice} from '../../../../../../core/sevice/MainSevice';
+import {SessionUser} from '../../../../../../core/model/SessionUser';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutFormComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private mainService: MainSevice) {
   }
 
+  ngOnInit() {
+    let newSessionUser = new SessionUser();
+    newSessionUser.status = false;
+    this.mainService.editSessionUser(newSessionUser, '1').subscribe();
+  }
 }

@@ -3,6 +3,7 @@ import { AuthService, FacebookLoginProvider } from 'angularx-social-login';
 import {User} from '../../../../../../core/model/User';
 import {AuthorizationsService} from '../../../../../../core/sevice/authorizations.service';
 import {MainSevice} from '../../../../../../core/sevice/MainSevice';
+import {SessionUser} from '../../../../../../core/model/SessionUser';
 
 
 
@@ -23,6 +24,7 @@ export class LoginFormComponent implements OnInit {
 
   // login
   status = false;
+  // sessionUser: SessionUser;
   // session: Session = Session.Instance;
 
   @Output()
@@ -56,17 +58,40 @@ export class LoginFormComponent implements OnInit {
       if ( this.tmpUser.userName === this.users[i].userName ) {
         if (this.tmpUser.password === this.users[i].password) {
           this.status = true;
+          this.tmpUser.id = this.users[i].id;
+          break;
         }
       }
     }
     if (this.status) {
-      location.assign('/account');
+      // location.assign('/account/about-you');
       this.mainService.setStatusUser(true);
       // this.session.setStatus(true);
+      // this.sessionUser = new SessionUser();
+      let newSessionUser = new SessionUser();
+      newSessionUser.status = true;
+      // pobranie uzytkownika z bazy o danym id i zpais do user
+      console.log('id=' + this.tmpUser.id);
+      // newSessionUser.user = null;
+      this.mainService.findUserById(this.tmpUser.id.toString()).subscribe( data => {
+        newSessionUser.user.id = data.id;
+        newSessionUser.user.name = data.name;
+        newSessionUser.user.surname = data.surname;
+        newSessionUser.user.userName = data.userName;
+        newSessionUser.user.password = data.password;
+        newSessionUser.user.passwordConfirm = data.passwordConfirm;
+      });
+      // console.log(newSessionUser.user.name);
+      this.mainService.editSessionUser(newSessionUser, '1').subscribe( result => this.goToAccountStart());
+      console.log(newSessionUser.user + ' : ' + newSessionUser.status);
     } else {
       location.assign('/failed-login');
       // console.log('status off=' +this.status);
     }
+  }
+
+  goToAccountStart() {
+    location.assign('/account/about-you');
   }
 
   // Method to log out.
@@ -78,9 +103,11 @@ export class LoginFormComponent implements OnInit {
     this.status = status;
     this.socioAuthServ.signOut();
     this.user = null;
-    this.mainService.setStatusUser(false);
-    // this.session.setStatus(false);
     console.log('User signed out.');
+  }
+
+  goToStart() {
+  location.assign('/account/start');
   }
 
   signup() {

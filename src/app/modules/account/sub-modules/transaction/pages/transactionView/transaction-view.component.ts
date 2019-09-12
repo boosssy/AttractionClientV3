@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Transaction} from "../../../../core/model/Transaction";
-import {Attraction} from "../../../../core/model/Attraction";
-import {MainSevice} from "../../../../core/sevice/MainSevice";
+import {Transaction} from '../../../../../../core/model/Transaction';
+import {Attraction} from '../../../../../../core/model/Attraction';
+import {MainSevice} from '../../../../../../core/sevice/MainSevice';
 
 @Component({
   selector: 'app-transaction',
-  templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.css']
+  templateUrl: './transaction-view.component.html',
+  styleUrls: ['./transaction-view.component.css']
 })
-export class TransactionComponent implements OnInit {
+export class TransactionViewComponent implements OnInit {
 
   transactions: Transaction[];
   attractions: Attraction[];

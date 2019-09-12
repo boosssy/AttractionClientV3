@@ -1,14 +1,19 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {MainSevice} from '../../../../../../core/sevice/MainSevice';
 import {Attraction} from '../../../../../../core/model/Attraction';
 import {Place} from '../../../../../../core/model/Place';
+
+declare let paypal: any;
 
 @Component({
   selector: 'app-attraction-browser',
   templateUrl: './attraction-browser.component.html',
   styleUrls: ['./attraction-browser.component.css']
 })
-export class AttractionBrowserComponent implements OnInit {
+export class AttractionBrowserComponent implements OnInit, AfterViewChecked {
+
+  constructor(private mainService: MainSevice) {
+  }
 
   attractions: Attraction[];
   places: Place[];
@@ -22,8 +27,35 @@ export class AttractionBrowserComponent implements OnInit {
   isVisibleAttraction = false;
   isVisibleNotFoundMsg = false;
 
-  constructor(private mainService: MainSevice) {
-  }
+  addScript = false;
+  paypalLoad = true;
+
+  finalAmount = 100;
+
+
+
+  paypalConfig = {
+    env: 'sandbox',
+    client: {
+      sandbox: 'ATUQBBbgPGkHTSVjQMCUuhatJxdAuKqnRuQb7MAd7IPbRTtfwNyvPb4AHyYR2amUlm4D8q80ZW97tFp-',
+      production: 'EC9PFrUAojlltMTcmE8suj1HutFRma7MnirL-1JbRsLrkVNZxjPjvHwaYWJJz77E-5CW25FM2gZmV1nt'
+    },
+    commit: true,
+    payment: (data, actions) => {
+      return actions.payment.create({
+        payment: {
+          transactions: [
+            { amount: { total: this.finalAmount, currency: 'PLN' } }
+          ]
+        }
+      });
+    },
+    onAuthorize: (data, actions) => {
+      return actions.payment.execute().then((payment) => {
+        // Do something when payment is successful.
+      });
+    }
+  };
 
   setPlaceParameters(place: Place) {
     this.tmpPlaceId = place.id;
@@ -86,4 +118,24 @@ export class AttractionBrowserComponent implements OnInit {
       this.places = data;
     });
   }
+
+  ngAfterViewChecked(): void {
+    if (!this.addScript) {
+      this.addPaypalScript().then(() => {
+        paypal.Button.render(this.paypalConfig, '#paypal-checkout-btn');
+        this.paypalLoad = false;
+      });
+    }
+  }
+
+  addPaypalScript() {
+    this.addScript = true;
+    return new Promise((resolve, reject) => {
+      const scripttagElement = document.createElement('script');
+      scripttagElement.src = 'https://www.paypalobjects.com/api/checkout.js';
+      scripttagElement.onload = resolve;
+      document.body.appendChild(scripttagElement);
+    });
+  }
+
 }

@@ -13,13 +13,13 @@ h2 {
 {
   float: right;
   position: relative;
-  width: 70%;
+  width: 75%;
 }
 
 .menu
 {
   float: left;
-  width: 26%;
+  width: 20%;
   position: relative;
   margin-left: 15px;
 }

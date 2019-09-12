@@ -5,6 +5,7 @@ import {Attraction} from '../model/Attraction';
 import {Place} from '../model/Place';
 import {User} from '../model/User';
 import {Transaction} from '../model/Transaction';
+import {SessionUser} from '../model/SessionUser';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class MainSevice {
   private placesUrl: string;
   private transactionsUrl: string;
   private usersUrl: string;
+  private sessionUserUrl: string;
   private statusUser = false;
 
   constructor(private http: HttpClient) {
@@ -22,6 +24,7 @@ export class MainSevice {
     this.placesUrl = 'http://localhost:8080/places';
     this.transactionsUrl = 'http://localhost:8080/transactions';
     this.usersUrl = 'http://localhost:8080/users';
+    this.sessionUserUrl = 'http://localhost:8080/session-user';
   }
 
   public setStatusUser(status: boolean) {
@@ -56,7 +59,7 @@ export class MainSevice {
     return this.http.get<Transaction[]>(this.transactionsUrl);
   }
 
-  //todo dodane do pobierania 3 najlepszych ofert na glownej stronie
+  // todo dodane do pobierania 3 najlepszych ofert na glownej stronie
   public findAttractionByAttractiveness(attraction: Attraction): Observable<Attraction> {
     return this.http.get<Attraction>(this.attractionsUrl + '/byAttractiveness/' + attraction.attractiveness);
   }
@@ -73,7 +76,19 @@ export class MainSevice {
     return this.http.get<User[]>(this.usersUrl);
   }
 
+  public findUserById(id: string): Observable<User> {
+    return this.http.get<User>(this.usersUrl + '/' + id);
+  }
+
   public saveUser(user: User) {
     return this.http.post<User>(this.usersUrl, user);
+  }
+
+  public findSessionUserById(userId: string) {
+    return this.http.get<SessionUser>(this.sessionUserUrl + '/' + userId);
+  }
+
+  public editSessionUser(sessionUser: SessionUser, id: string) {
+    return this.http.put(this.sessionUserUrl + '/' + id, sessionUser);
   }
 }

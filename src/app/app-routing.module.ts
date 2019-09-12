@@ -18,7 +18,7 @@ import {AccountComponent} from './modules/account/account.component';
 import {AttractionBrowserComponent} from './modules/account/sub-modules/attractions/pages/attraction-browser/attraction-browser.component';
 import {AboutUserComponent} from './modules/account/sub-modules/account-information/pages/about-user/about-user.component';
 import {FailedLoginComponent} from './modules/exceptions/pages/failed-login/failed-login.component';
-import {TransactionComponent} from "./modules/account/sub-modules/transaction/transaction.component";
+import {TransactionViewComponent} from "./modules/account/sub-modules/transaction/pages/transactionView/transaction-view.component";
 
 
 const parentModuleRoutes: Routes = [
@@ -62,7 +62,7 @@ const parentModuleRoutes: Routes = [
           },
           {
             path: 'transaction',
-            component: TransactionComponent
+            component: TransactionViewComponent
           }
         ]
       },
